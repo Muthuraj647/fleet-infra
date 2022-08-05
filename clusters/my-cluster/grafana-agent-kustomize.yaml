@@ -10,8 +10,4 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  healthCheck:
-    - apiVersion: apps/v1
-      kind: Deployment
-      name: grafana
 
