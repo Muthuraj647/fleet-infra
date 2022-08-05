@@ -1,0 +1,23 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: prometheus
+  labels:
+    name: prometheus
+spec:
+  selector:
+    matchLabels:
+      operated-prometheus: "true"
+  namespaceSelector:
+    any: true
+  endpoints:
+    - port: web
+      relabelings:
+      - sourceLabels: [__meta_kubernetes_endpoint_ready]
+        action: replace
+        targetLabel: readystate
+      #- regex: 'job'
+        #action: labeldrop
+
+
+
