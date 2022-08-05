@@ -1,8 +1,13 @@
-
+apiVersion: apps/v1
+kind: Namespace
+metadata:
+  name: grafana-agent
+...
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: grafana
+  namespace: grafana-agent
 spec:
   replicas: 1
   selector:
