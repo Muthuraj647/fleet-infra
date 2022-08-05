@@ -16,6 +16,7 @@ spec:
   template:
     metadata:
       name: grafana
+      namespace: grafana-agent
       labels:
         app: grafana
     spec:
