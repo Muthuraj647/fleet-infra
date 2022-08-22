@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: nginix
+...
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  namespace: nginix
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginix
+  template:
+    metadata:
+      name: nginix
+      namespace: nginix
+      labels:
+        app: nginix
+    spec:
+      containers:
+      - name: app
+        image: nginix:latest
