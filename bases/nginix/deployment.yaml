@@ -22,4 +22,4 @@ spec:
     spec:
       containers:
       - name: app
-        image: nginix:latest
+        image: nginx:latest
