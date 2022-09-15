@@ -4,14 +4,9 @@ metadata:
   name: grafana
   namespace: flux-system
 spec:
-  interval: 5m0s
+  interval: 15m0s
   path: ./bases/grafana-agent
   prune: true
   sourceRef:
     kind: GitRepository
     name: flux-system
-  healthChecks:
-    - apiVersion: apps/v1
-      kind: Deployment
-      name: grafana
-      namespace: grafana
