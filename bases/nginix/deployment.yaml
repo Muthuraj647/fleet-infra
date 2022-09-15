@@ -4,7 +4,7 @@ metadata:
   name: nginx
 ...
 apiVersion: apps/v1
-kind: Deployment
+kind: Pod
 metadata:
   name: nginx
   namespace: nginx
